@@ -4,7 +4,9 @@ import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   nitro: {
     routes: {
-      "/**": { swr: true },
+      "/**": {
+        cache: { swr: true, maxAge: 120, staleMaxAge: 60, headersOnly: true },
+      },
     },
   },
 });
